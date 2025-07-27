@@ -19,18 +19,25 @@ export default function Profile() {
   }, []);
 
   return (
-    // <Center>
-      <Stack align='center'>
+    <container size="xs" align="center" justify="center">
+      <Stack
+      h={300}
+      bg="var(--mantine-color-body)"
+      align="center"
+      justify="center"
+      gap="md"
+      style={{marginTop: '80px'}}
+    >
 
-      <Avatar src={profileData?.avatar} alt="it's me" />
+      <Avatar src={profileData?.avatar} alt="it's me" variant="transparent" radius="xl" size="xl" color="cyan"  />
 
       <Text tt="capitalize">{profileData?.name}</Text>
 
-      <Text c="dimmed">{profileData?.email}</Text>
-      <Text c="dimmed">{profileData?._id}</Text>
-      <Text c="dimmed">{profileData?.createdAt}</Text>
+      <Text c="dimmed">  {profileData?.email}</Text>
+      <Text size="md" ><strong>ID:</strong>{profileData?._id}</Text>
+      <Text  size="md"> <strong>Created At:</strong> {profileData?.createdAt}</Text>
       </Stack>
-    // </Center>
+     </container>
 
   )
 }
